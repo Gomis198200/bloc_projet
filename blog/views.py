@@ -14,6 +14,11 @@ def posts_detail(request,id):
     print(post) 
     print('#***',40)
     return render ( request, 'blog/posts_detail.html',{'post':post})
+def home(request):
+    return render (request,'blog/index.html')
+def blog(request):
+    return render (request,'blog/blog.html')
+
 
 
 # Create your views here.
