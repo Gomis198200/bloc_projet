@@ -1,9 +1,13 @@
-from	django.urls	import	path
-from	.views	import	post_list,detail_post,home,blog
-urlpatterns	=	[
-				path('',	post_list,	name='post_list'),
-                path('<int:id>', detail_post, name='detail_post'),
-                path('home/',home,name='home'),
-                path('blog/',blog,name='blog'),
-                
-];                    
+from django.urls import path
+from .views import post_list
+from .views import details_posts
+from .views import post_create
+from .views import home
+from .views import blog
+urlpatterns = [
+             path('form/',post_create,name='post_create'),
+             path('posts/', post_list, name='post_list'),
+             path('posts/<int:id>', details_posts, name='detail_post'),
+             path('home/', home, name='index'),
+             path('blog/', blog, name='about'),
+]
